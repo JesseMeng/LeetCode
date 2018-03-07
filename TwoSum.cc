@@ -1,6 +1,6 @@
 //Time Complexity: O(n) needed to pass through the array
 //Space Complexity: O(n) required to store the numbers in the array
-
+//difficulty: easy
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
