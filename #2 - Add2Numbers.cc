@@ -66,3 +66,6 @@ public:
         return actualAnswer;
     }
 };
+//Further explanation:
+//Question asks to add 2 numbers, each represented by a linked list, my solution iterates over the two linked lists simultaneously,
+//adding digit by digit, while saving the carryout. 
