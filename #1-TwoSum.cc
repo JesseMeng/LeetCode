@@ -18,4 +18,7 @@ public:
     
     }
 };
-
+//Further explanation:
+//Question asked to find the indices of 2 elements in the array such they add up to target, we can simply go through each element one by one
+//storing elements in a map, if such a feasile pair exists, then the second element's complementary, which is the first element will eventually be located in the map
+//this will find our solution
