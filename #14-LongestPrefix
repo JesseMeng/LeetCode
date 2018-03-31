@@ -1,0 +1,24 @@
+//Time Complexity: O(n*m) needed to pass through the array of n strings with longest prefix length of m
+//Space Complexity: O(1)
+//difficulty: easy
+
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string answer="";
+        int count =0;
+        if(strs.empty()) return "";
+        if(strs.size()==1)return strs[0];
+        while(true){
+            for(int i=0; i<strs.size()-1;++i){
+                if(strs[i]=="" ||strs[i+1]=="") return answer;
+                if(count >= strs[i].length()|| count >=strs[i+1].length()) return answer;
+                if(strs[i][count]!=strs[i+1][count]) return answer;
+            }
+            answer+=strs[0][count];
+            count++;
+        }
+    }
+};
+//Further Explanation:
+//Algorithm goes through each string's first character and check if they are equal, if they are, attach to answer. If not then return.
