@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int z = numbers.size()-1;
+        map<int, int> m;
+        vector<int> v;
+        for(int i=0; i<=z; ++i){
+            if(m.find(target-numbers[i])!=m.end()){
+                v.emplace_back(min(i+1,m[target-numbers[i]]+1));
+                v.emplace_back(max(i+1,m[target-numbers[i]]+1));
+                return v;
+            }
+            else{
+                if(numbers[i]+numbers[z-i]==target){
+                    v.emplace_back(i+1);
+                    v.emplace_back(z-i+1);
+                    return v;
+                }
+                m[numbers[i]]=i;
+                m[numbers[z-i]]=z-i;
+            }
+        }
+    }
+};
